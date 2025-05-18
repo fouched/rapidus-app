@@ -1,0 +1,1 @@
+# Rapidus skeleton application
