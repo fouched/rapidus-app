@@ -1,0 +1,18 @@
+package views
+
+import "myapp/views/layouts"
+
+templ Home() {
+    @layouts.Base("Home") {
+        <div class="col text-center">
+            <div class="d-flex align-items-center justify-content-center mt-5">
+                <div>
+                    <img src="/public/images/rapidus.jpg" class="mb-5" alt="logo" style="width: 100px;height:auto;">
+                    <h1>Rapidus</h1>
+                    <hr>
+                    <small class="text-muted">Go build something awesome</small>
+                </div>
+            </div>
+        </div>
+    }
+}
