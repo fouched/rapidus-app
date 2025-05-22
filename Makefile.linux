@@ -1,0 +1,39 @@
+BINARY_NAME=rapidusApp
+
+
+## build: builds all binaries
+build:
+	@echo "Building Rapidus..."
+	@go build -o tmp/${BINARY_NAME} .
+	@echo "Rapidus built!"
+
+run: build
+	@echo "Starting Rapidus..."
+	@./tmp/${BINARY_NAME} &
+	@echo "Rapidus started!"
+
+clean:
+	@echo "Cleaning..."
+	@go clean
+	@rm tmp/${BINARY_NAME}
+	@echo "Cleaned!"
+
+start-compose:
+	docker-compose up -d
+
+stop-compose:
+	docker-compose down
+
+test:
+	@echo "Testing..."
+	@go test ./...
+	@echo "Done!"
+
+start: run
+
+stop:
+	@echo "Stopping Rapidus..."
+	@-pkill -SIGTERM -f "./tmp/${BINARY_NAME}"
+	@echo "Stopped Rapidus!"
+
+restart: stop start

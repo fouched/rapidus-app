@@ -3,22 +3,20 @@ SHELL=cmd.exe
 
 ## build: builds all binaries
 build:
-# 	can use vendor below for local copy, but that is only really required in VS Code...
-#    @go mod vendor
-	@templ generate
+	@echo "Building Rapidus..."
 	@go build -o tmp/${BINARY_NAME} .
-	@echo Rapidus built!
+	@echo "Rapidus built!"
 
 run: build
-	@echo Staring Rapidus...
+	@echo "Staring Rapidus..."
 	@.\tmp\${BINARY_NAME} &
-	@echo Rapidus started!
+	@echo "Rapidus started!"
 
 clean:
-	@echo Cleaning...
+	@echo "Cleaning..."
 	@go clean
 	@del .\tmp\${BINARY_NAME}
-	@echo Cleaned!
+	@echo "Cleaned!"
 
 start-compose:
 	docker-compose up -d
@@ -27,15 +25,15 @@ stop-compose:
 	docker-compose down
 
 test:
-	@echo Testing...
+	@echo "Testing..."
 	@go test ./...
-	@echo Done!
+	@echo "Done!"
 
 start: run
 
 stop:
-	@echo "Starting the front end..."
+	@echo "Stopping Rapidus..."
 	@taskkill /IM ${BINARY_NAME} /F
-	@echo Stopped Rapidus
+	@echo "Stopped Rapidus"
 
 restart: stop start
