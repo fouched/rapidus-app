@@ -5,7 +5,6 @@ go 1.24.3
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/a-h/templ v0.3.865
-	github.com/fouched/rapidus v0.0.0-00010101000000-000000000000
 	github.com/fouched/toolkit/v2 v2.4.0
 	github.com/go-chi/chi/v5 v5.2.1
 	github.com/ory/dockertest/v3 v3.12.0
