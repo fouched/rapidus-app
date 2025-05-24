@@ -15,8 +15,5 @@ type Handlers struct {
 func (h *Handlers) Home(w http.ResponseWriter, r *http.Request) {
 	//defer h.App.LoadTime(time.Now())
 
-	userID := h.sessionGetInt(r.Context(), "userID")
-	isAuthenticated := userID != 0
-
-	h.render(w, r, views.Home(isAuthenticated))
+	h.render(w, r, views.Home())
 }
