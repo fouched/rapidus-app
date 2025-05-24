@@ -10,7 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import "myapp/views/layouts"
 
-func Home(isAuthenticated bool) templ.Component {
+func Home() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -43,17 +43,7 @@ func Home(isAuthenticated bool) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"col text-center\"><div class=\"d-flex align-items-center justify-content-center mt-5\"><div><img src=\"/public/images/rapidus.jpg\" class=\"mb-5\" alt=\"logo\" style=\"width: 100px;height:auto;\"><h1>Rapidus</h1><hr><small class=\"text-muted\">Go build something awesome</small> ")
-			if templ_7745c5c3_Err != nil {
-				return templ_7745c5c3_Err
-			}
-			if isAuthenticated {
-				templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "<br><small><a href=\"/users/logout\">Logout</a></small>")
-				if templ_7745c5c3_Err != nil {
-					return templ_7745c5c3_Err
-				}
-			}
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div></div><p class=\"mt-5\">Things to try:</p><div class=\"list-group\"><a href=\"/sessions\" class=\"list-group-item list-group-item-action\">Try Sessions</a> <a href=\"/users/login\" class=\"list-group-item list-group-item-action\">Login a user</a> <a href=\"/form\" class=\"list-group-item list-group-item-action\">Server Side Form Validation</a> <a href=\"/json\" class=\"list-group-item list-group-item-action\">JSON Response</a> <a href=\"/xml\" class=\"list-group-item list-group-item-action\">XML Response</a> <a href=\"/download-file\" class=\"list-group-item list-group-item-action\">Download File</a> <a href=\"/crypto\" class=\"list-group-item list-group-item-action\">Encrypt / Decrypt</a> <a href=\"/cache/demo\" class=\"list-group-item list-group-item-action\">Cache Demo (HTMX)</a> <a href=\"/cache/redis/demo\" class=\"list-group-item list-group-item-action\">Redis Cache Demo (HTMX)</a></div></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"col text-center\"><div class=\"d-flex align-items-center justify-content-center mt-5\"><div><img src=\"/public/images/rapidus.jpg\" class=\"mb-5\" alt=\"logo\" style=\"width: 100px;height:auto;\"><h1>Rapidus</h1><hr><small class=\"text-muted\">Go build something awesome</small></div></div></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
